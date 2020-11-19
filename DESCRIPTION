@@ -1,16 +1,22 @@
 Package: myscale
-Title: What the Package Does (One Line, Title Case)
+Title: Scale input value by "log" or "exp" algirothm
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "First",
-           family = "Last",
+    person(given = "Ziqi",
+           family = "Su",
            role = c("aut", "cre"),
-           email = "first.last@example.com",
+           email = "suziqi2016@163.com",
            comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to
-    pick a license
+Description: By choosing logarithm or exponential, this function will return the scaled input numeric vector.
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
+Suggests: 
+    testthat,
+    knitr,
+    rmarkdown
+Imports: 
+    purrr
+VignetteBuilder: knitr
