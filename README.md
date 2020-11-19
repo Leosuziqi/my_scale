@@ -26,24 +26,36 @@ This is a basic example which shows you how to solve a common problem:
     myscale(10,"log")
     #> [1] 2.302585
 
-What is special about using `README.Rmd` instead of just `README.md`?
-You can include R chunks like so:
 
-    summary(cars)
-    #>      speed           dist       
-    #>  Min.   : 4.0   Min.   :  2.00  
-    #>  1st Qu.:12.0   1st Qu.: 26.00  
-    #>  Median :15.0   Median : 36.00  
-    #>  Mean   :15.4   Mean   : 42.98  
-    #>  3rd Qu.:19.0   3rd Qu.: 56.00  
-    #>  Max.   :25.0   Max.   :120.00
+## Brief Explanation
 
-You’ll still need to render `README.Rmd` regularly, to keep `README.md`
-up-to-date.
+I made my R packages "myscale.R" with "devtools" and "usethis". The main steps are shown below:
 
-You can also embed plots, for example:
+(1) Load library and create R package to desired location
+```{r}
+library(devtools)
+create_package("C:/STAT545b/assignment/scale")
+```
 
-<img src="man/figures/README-pressure-1.png" width="100%" />
+(2) Create R script and wrote down my function
+```{r}
+use_r("myscale")
+use_git()
+use_mit_license("Ziqi")
+```
 
-In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub!
+(3) Use tools from "devtools" and "usethis" packages to document my package
+```{r}
+library(roxygen2)
+#Code -> Insert Roxygen Skeleton
+use_package("purrr")
+use_vignette("myscale")
+document()
+```
+
+(4) Build test file to test and check my function
+```{r}
+use_testthat()
+# Create several conditions to check my function
+test()
+```
