@@ -37,18 +37,36 @@ library(myscale)
 myscale(10,"log")
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
 
-```{r cars}
-summary(cars)
+## Brief Explanation
+
+I made my R packages "myscale.R" with "devtools" and "usethis". The main steps are shown below:
+
+(1) Load library and create R package to desired location
+```{r}
+library(devtools)
+create_package("C:/STAT545b/assignment/scale")
 ```
 
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date.
-
-You can also embed plots, for example:
-
-```{r pressure, echo = FALSE}
-plot(pressure)
+(2) Create R script and wrote down my function
+```{r}
+use_r("myscale")
+use_git()
+use_mit_license("Ziqi")
 ```
 
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub!
+(3) Use tools from "devtools" and "usethis" packages to document my package
+```{r}
+library(roxygen2)
+#Code -> Insert Roxygen Skeleton
+use_package("purrr")
+use_vignette("myscale")
+document()
+```
+
+(4) Build test file to test and check my function
+```{r}
+use_testthat()
+# Create several conditions to check my function
+test()
+```
